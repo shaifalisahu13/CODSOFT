@@ -1,0 +1,33 @@
+import random
+print('Winning rules of the game ROCK PAPER SCISSORS are :\n'
+      + "Rock vs Paper -> Paper wins \n"
+      + "Rock vs Scissors -> Rock wins \n"
+      + "Paper vs Scissors -> Scissor wins \n")
+while True:
+    user_input =int(input("Enter your choice: 0 for ROCK ,1 for PAPER, 2 for SCISSORS :"))
+
+    if user_input >= 3 or user_input < 0:
+        print("You entered an invalid number")
+    # In valid number case
+    else:
+        computer_selection =random.randint(0 ,2)
+        print("Computer Choice:")
+        print(computer_selection)
+        if computer_selection == user_input  :  
+            print("It's a tie or draw")
+        elif computer_selection == 0 and user_input == 2:
+            print("You lose")
+        elif user_input == 0 and computer_selection == 2:
+            print("You win")
+        elif computer_selection > user_input:
+            print("You loses")
+        elif computer_selection < user_input:
+            print(" You Win")
+        print("Do you want to play Again?(Yes/No)")
+        ans =input().lower()
+        if ans =="yes":
+            continue
+        else:
+            print("Game is over")
+            break
+print("Thanks For Playing")
